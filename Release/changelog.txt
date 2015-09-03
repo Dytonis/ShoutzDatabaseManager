@@ -1,0 +1,6 @@
+Updated launcher to version 1.1.5724.29961
+ - More error checks
+ - Fixed a bug causing a crash if you try to launch without having the right files.
+ 
+Updated the Manager to Version 0.9.1.1542
+ - Added the ability to add or remove columns in each editor.
