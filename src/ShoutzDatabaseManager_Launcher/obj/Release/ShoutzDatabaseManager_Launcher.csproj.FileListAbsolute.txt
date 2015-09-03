@@ -1,0 +1,10 @@
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzDatabaseManager_Launcher\bin\Release\ShoutzDatabaseManager_Launcher.exe.config
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzDatabaseManager_Launcher\bin\Release\ShoutzDatabaseManager_Launcher.exe
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzDatabaseManager_Launcher\bin\Release\ShoutzDatabaseManager_Launcher.pdb
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzDatabaseManager_Launcher\obj\Release\ShoutzDatabaseManager_Launcher.csprojResolveAssemblyReference.cache
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzDatabaseManager_Launcher\obj\Release\ShoutzDatabaseManager_Launcher.ShoutzDatabaseManager_Launcher.resources
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzDatabaseManager_Launcher\obj\Release\ShoutzDatabaseManager_Launcher.Properties.Resources.resources
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzDatabaseManager_Launcher\obj\Release\ShoutzDatabaseManager_Launcher.csproj.GenerateResource.Cache
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzDatabaseManager_Launcher\obj\Release\ShoutzDatabaseManager_Launcher.exe
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzDatabaseManager_Launcher\obj\Release\ShoutzDatabaseManager_Launcher.pdb
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzDatabaseManager_Launcher\obj\Release\ShoutzDatabaseManager.Shared.Waiting.resources

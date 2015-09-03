@@ -1,0 +1,16 @@
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzLoyaltyProgramManager\bin\Release\ShoutzLoyaltyProgramManager.exe.config
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzLoyaltyProgramManager\obj\Release\ShoutzLoyaltyProgramManager.exe
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzLoyaltyProgramManager\obj\Release\ShoutzLoyaltyProgramManager.pdb
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzLoyaltyProgramManager\bin\Release\ShoutzLoyaltyProgramManager.exe
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzLoyaltyProgramManager\bin\Release\ShoutzLoyaltyProgramManager.pdb
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzLoyaltyProgramManager\obj\Release\ShoutzDatabaseManager.Editors.BanConfiguration.resources
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzLoyaltyProgramManager\obj\Release\ShoutzDatabaseManager.ContestEditor.resources
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzLoyaltyProgramManager\obj\Release\ShoutzDatabaseManager.Editors.DayConfiguration.resources
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzLoyaltyProgramManager\obj\Release\ShoutzDatabaseManager.Editors.UserAdmin.resources
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzLoyaltyProgramManager\obj\Release\ShoutzDatabaseManager.Editors.UsersEditor.resources
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzLoyaltyProgramManager\obj\Release\ShoutzDatabaseManager.Shared.Waiting.resources
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzLoyaltyProgramManager\obj\Release\ShoutzDatabaseManager.EnterPasswordWindow.resources
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzLoyaltyProgramManager\obj\Release\ShoutzDatabaseManager.Main.resources
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzLoyaltyProgramManager\obj\Release\ShoutzLoyaltyProgramManager.Properties.Resources.resources
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzLoyaltyProgramManager\obj\Release\ShoutzDatabaseManager.Splash.resources
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzLoyaltyProgramManager\obj\Release\ShoutzDatabaseManager.csproj.GenerateResource.Cache

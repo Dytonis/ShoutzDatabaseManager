@@ -5,8 +5,6 @@ using System.Net;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.IO;
-using ShoutzDatabaseManager;
-using ShoutzDatabaseManager_AdministratorData;
 
 namespace ShoutzDatabaseManager_Launcher
 {
@@ -55,28 +53,25 @@ namespace ShoutzDatabaseManager_Launcher
             }
         }
 
-        private User user = new User("none", "");
         private bool pole = false;
         private void button1_Click(object sender, EventArgs e)
         {               
             try
             {
-                if (!File.Exists(Directory.GetCurrentDirectory() + "\\sdmf.exe"))
-                {
-                    NeedsDownload = true;
-                    label1.Text = "SDM Version: None";
-                    SDMVersion = new Version();
+                if(!File.Exists(Directory.GetCurrentDirectory() + "\\sdmf.exe"))
+            {
+                NeedsDownload = true;
+                label1.Text = "SDM Version: None";
+                SDMVersion = new Version();
 
-                    DownloadNewVersion();
-                }
-                else
-                {
-                    AssemblyName SDMAssembly = AssemblyName.GetAssemblyName(Directory.GetCurrentDirectory() + "\\sdmf.exe");
-                    SDMVersion = SDMAssembly.Version;
-                    label1.Text = "SDM Version: " + SDMVersion.ToString();
-                }
-
-                user = AdministratorData.Adminstrators.GetUserByUsername(textBox1.Text);
+                DownloadNewVersion();
+            }
+            else
+            {
+                AssemblyName SDMAssembly = AssemblyName.GetAssemblyName(Directory.GetCurrentDirectory() + "\\sdmf.exe");
+                SDMVersion = SDMAssembly.Version;
+                label1.Text = "SDM Version: " + SDMVersion.ToString();
+            }
 
                 //check version
 
@@ -105,7 +100,8 @@ namespace ShoutzDatabaseManager_Launcher
                 }
                 else
                 {
-                    Launch(user);
+                    Launch();
+                    Close();
                 }
 
             }
@@ -115,20 +111,14 @@ namespace ShoutzDatabaseManager_Launcher
             }
         }
 
-        public void Launch(User user)
+        public void Launch()
         {
-            if(user.GetUsername() == "none")
-            {
-                throw new Exception();
-            }
-
             string Path = Directory.GetCurrentDirectory();
 
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.FileName = "sdmf.exe";
             startInfo.UseShellExecute = false;
             startInfo.CreateNoWindow = false;
-            startInfo.Arguments = user.GetPassword();
 
             Process process = Process.Start(startInfo);
         }

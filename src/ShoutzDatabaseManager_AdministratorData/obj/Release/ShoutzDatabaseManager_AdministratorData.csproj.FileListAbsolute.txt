@@ -1,0 +1,4 @@
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzDatabaseManager_AdministratorData\bin\Release\ShoutzDatabaseManager_AdministratorData.dll
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzDatabaseManager_AdministratorData\bin\Release\ShoutzDatabaseManager_AdministratorData.pdb
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzDatabaseManager_AdministratorData\obj\Release\ShoutzDatabaseManager_AdministratorData.dll
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzDatabaseManager_AdministratorData\obj\Release\ShoutzDatabaseManager_AdministratorData.pdb

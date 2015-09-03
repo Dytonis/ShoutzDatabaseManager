@@ -54,6 +54,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Waiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Waiting.Designer.cs">
+      <DependentUpon>Waiting.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -67,6 +73,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Waiting.resx">
+      <DependentUpon>Waiting.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -82,16 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo_small.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ShoutzDatabaseManager_AdministratorData\ShoutzDatabaseManager_AdministratorData.csproj">
-      <Project>{43eec6b6-3c72-4d76-8651-91e158449d13}</Project>
-      <Name>ShoutzDatabaseManager_AdministratorData</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ShoutzLoyaltyProgramManager\ShoutzDatabaseManager.csproj">
-      <Project>{875fd039-241d-46d9-b368-aa4eb16ff1b2}</Project>
-      <Name>ShoutzDatabaseManager</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
