@@ -10,8 +10,8 @@ namespace ShoutzDatabaseManager_Launcher
 {
     public partial class ShoutzDatabaseManager_Launcher : Form
     {
-        private bool NeedsDownload = false;
         private Version SDMVersion = new Version();
+        private Version OldVersion = new Version();
         public ShoutzDatabaseManager_Launcher()
         {
             InitializeComponent();
@@ -19,26 +19,36 @@ namespace ShoutzDatabaseManager_Launcher
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            button1.Enabled = false;
-
-            if (!File.Exists(Directory.GetCurrentDirectory() + "\\sdmf.exe"))
+            try
             {
-                NeedsDownload = true;
-                label1.Text = "SDM Version: None";
-                SDMVersion = new Version();
+                button1.Enabled = false;
 
-                DownloadNewVersion();
+                if (!File.Exists(Directory.GetCurrentDirectory() + "\\sdmf.exe"))
+                {
+                    label1.Text = "SDM Version: None";
+                    SDMVersion = new Version();
+                }
+                else
+                {
+                    AssemblyName SDMAssembly = AssemblyName.GetAssemblyName(Directory.GetCurrentDirectory() + "\\sdmf.exe");
+                    SDMVersion = SDMAssembly.Version;
+                    label1.Text = "SDM Version: " + SDMVersion.ToString();
+                }
+
+                Assembly LauncherAssembly = Assembly.GetExecutingAssembly();
+                AssemblyName LAM = AssemblyName.GetAssemblyName(LauncherAssembly.Location);
+                label4.Text = "Launcher Version: " + LAM.Version.ToString();
             }
-            else
+            catch(BadImageFormatException)
             {
-                AssemblyName SDMAssembly = AssemblyName.GetAssemblyName(Directory.GetCurrentDirectory() + "\\sdmf.exe");
-                SDMVersion = SDMAssembly.Version;
-                label1.Text = "SDM Version: " + SDMVersion.ToString();
-            }
+                MessageBox.Show("The file 'sdmf.exe' is corrupt. The launcher will delete it and attempt to re-download. If this is not the first time you have seen this message in a row without modifying " +
+                    "sdmf.exe or any .dll then please contact tanner@shoutz about error code 2.\n\nIf re-starting the program does not work, you can still manually launch the manager. \n1. Navigate to "
+                    + "https://github.com/Dytonis/ShoutzDatabaseManager/tree/master/Release" + " and download every .dll and sdmf.exe.\n" 
+                    + "2. Move each file you have downloaded into a folder and run sdmf.exe", "Error code 2");
 
-            Assembly LauncherAssembly = Assembly.GetExecutingAssembly();
-            AssemblyName LAM = AssemblyName.GetAssemblyName(LauncherAssembly.Location);
-            label4.Text = "Launcher Version: " + LAM.Version.ToString();
+                File.Delete(Directory.GetCurrentDirectory() + "\\sdmf.exe");
+                Close();
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -55,23 +65,24 @@ namespace ShoutzDatabaseManager_Launcher
 
         private bool pole = false;
         private void button1_Click(object sender, EventArgs e)
-        {               
+        {
+            OldVersion = SDMVersion;
+
             try
             {
                 if(!File.Exists(Directory.GetCurrentDirectory() + "\\sdmf.exe"))
-            {
-                NeedsDownload = true;
-                label1.Text = "SDM Version: None";
-                SDMVersion = new Version();
+                {
+                    label1.Text = "SDM Version: None";
+                    SDMVersion = new Version();
 
-                DownloadNewVersion();
-            }
-            else
-            {
-                AssemblyName SDMAssembly = AssemblyName.GetAssemblyName(Directory.GetCurrentDirectory() + "\\sdmf.exe");
-                SDMVersion = SDMAssembly.Version;
-                label1.Text = "SDM Version: " + SDMVersion.ToString();
-            }
+                    DownloadNewVersion();
+                }
+                else
+                {
+                    AssemblyName SDMAssembly = AssemblyName.GetAssemblyName(Directory.GetCurrentDirectory() + "\\sdmf.exe");
+                    SDMVersion = SDMAssembly.Version;
+                    label1.Text = "SDM Version: " + SDMVersion.ToString();
+                }
 
                 //check version
 
@@ -109,6 +120,10 @@ namespace ShoutzDatabaseManager_Launcher
             {
                 MessageBox.Show("Sorry, the username \'" + textBox1.Text + "\' was not found.");
             }
+            catch (Exception)
+            {
+                MessageBox.Show("There was a problem trying to request the current version. Please check your internet connection and try again. The github repository may be down.");
+            }
         }
 
         public void Launch()
@@ -139,14 +154,85 @@ namespace ShoutzDatabaseManager_Launcher
         private int Progress = 0;
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://raw.githubusercontent.com/Dytonis/ShoutzDatabaseManager/master/Release/version.txt");
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream stream = response.GetResponseStream();
+                StreamReader r = new StreamReader(stream);
+
+                string content = r.ReadToEnd();
+
+                content = content.Replace("\r\n", "");
+
+                Version latest = new Version(content);
+
+                if (!File.Exists(Directory.GetCurrentDirectory() + "\\sdmf.exe"))
+                {
+                    label1.Text = "SDM Version: None";
+                    SDMVersion = new Version();
+
+                    DownloadNewVersion();
+                }
+                else
+                {
+                    AssemblyName SDMAssembly = AssemblyName.GetAssemblyName(Directory.GetCurrentDirectory() + "\\sdmf.exe");
+                    SDMVersion = SDMAssembly.Version;
+                    label1.Text = "SDM Version: " + SDMVersion.ToString();
+
+                    if (!SDMVersion.ToString().Equals(latest.ToString()))
+                    {
+                        DownloadNewVersion();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The current version is up to date.");
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("There was a problem trying to request the current version. Please check your internet connection and try again. The github repository may be down.");
+            }
         }
 
         private void CheckForCompletion()
         {
             if(Progress >= 2)
             {
-                waiter.Close();
+                if (!File.Exists(Directory.GetCurrentDirectory() + "\\sdmf.exe"))
+                {
+                    label1.Text = "SDM Version: None";
+                    SDMVersion = new Version();
+
+                    DownloadNewVersion();
+                    return;
+                }
+                else
+                {
+                    AssemblyName SDMAssembly = AssemblyName.GetAssemblyName(Directory.GetCurrentDirectory() + "\\sdmf.exe");
+                    SDMVersion = SDMAssembly.Version;
+                    label1.Text = "SDM Version: " + SDMVersion.ToString();
+
+                    waiter.Close();
+                    if (!File.Exists(Directory.GetCurrentDirectory() + "\\sdmf.exe"))
+                    {
+                        MessageBox.Show("There is a new version, but the auto-updater failed to download it. Please send an email to tanner@shoutz.com about error code 1. \n\nYou can still download the newest version here: https://github.com/Dytonis/ShoutzDatabaseManager/tree/master/Release", "Error code 1");
+                    }
+                    else
+                    {
+                        string version = "";
+                        if (OldVersion.ToString() == "0.0")
+                        {
+                            version = "None";
+                        }
+                        else
+                        {
+                            version = OldVersion.ToString();
+                        }
+                        MessageBox.Show("There was an update!\n\nOld Version: " + version + "\nNew Version: " + SDMVersion.ToString(), "Completed");
+                    }
+                }
             }
         }
 
