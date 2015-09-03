@@ -23,7 +23,7 @@ namespace ShoutzDatabaseManager_Launcher
         {
             button1.Enabled = false;
 
-            if(!File.Exists(Directory.GetCurrentDirectory() + "\\sdmf.exe"))
+            if (!File.Exists(Directory.GetCurrentDirectory() + "\\sdmf.exe"))
             {
                 NeedsDownload = true;
                 label1.Text = "SDM Version: None";
@@ -61,6 +61,21 @@ namespace ShoutzDatabaseManager_Launcher
         {               
             try
             {
+                if (!File.Exists(Directory.GetCurrentDirectory() + "\\sdmf.exe"))
+                {
+                    NeedsDownload = true;
+                    label1.Text = "SDM Version: None";
+                    SDMVersion = new Version();
+
+                    DownloadNewVersion();
+                }
+                else
+                {
+                    AssemblyName SDMAssembly = AssemblyName.GetAssemblyName(Directory.GetCurrentDirectory() + "\\sdmf.exe");
+                    SDMVersion = SDMAssembly.Version;
+                    label1.Text = "SDM Version: " + SDMVersion.ToString();
+                }
+
                 user = AdministratorData.Adminstrators.GetUserByUsername(textBox1.Text);
 
                 //check version
@@ -71,6 +86,8 @@ namespace ShoutzDatabaseManager_Launcher
                 StreamReader r = new StreamReader(stream);
 
                 string content = r.ReadToEnd();
+
+                content = content.Replace("\r\n", "");
 
                 Version latest = new Version(content);
 
@@ -140,18 +157,19 @@ namespace ShoutzDatabaseManager_Launcher
             if(Progress >= 2)
             {
                 waiter.Close();
-                button1_Click(null, null);
             }
         }
 
         private void CDll_DownloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             Progress++;
+            CheckForCompletion();
         }
 
         private void CExe_DownloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             Progress++;
+            CheckForCompletion();
         }
     }
 }
