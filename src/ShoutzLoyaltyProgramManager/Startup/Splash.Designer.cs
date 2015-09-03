@@ -1,4 +1,4 @@
-﻿namespace ShoutzLoyaltyProgramManager
+﻿namespace ShoutzDatabaseManager
 {
     partial class Splash
     {
@@ -35,7 +35,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::ShoutzLoyaltyProgramManager.Properties.Resources.NEW_ShoutzLogo;
+            this.BackgroundImage = global::ShoutzDatabaseManager.Properties.Resources.NEW_ShoutzLogo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(605, 176);
             this.DoubleBuffered = true;

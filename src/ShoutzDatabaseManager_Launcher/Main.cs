@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Reflection;
+using System.Net;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.IO;
+using ShoutzDatabaseManager;
 using ShoutzDatabaseManager_AdministratorData;
 
 namespace ShoutzDatabaseManager_Launcher
@@ -53,16 +55,42 @@ namespace ShoutzDatabaseManager_Launcher
             }
         }
 
+        private User user = new User("none", "");
+        private bool pole = false;
         private void button1_Click(object sender, EventArgs e)
-        {
+        {               
             try
             {
-                User user = AdministratorData.Adminstrators.GetUserByUsername(textBox1.Text);
+                user = AdministratorData.Adminstrators.GetUserByUsername(textBox1.Text);
 
                 //check version
-                //downloadnewversion
-                
-                Launch(user);
+
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://raw.githubusercontent.com/Dytonis/ShoutzDatabaseManager/master/Release/version.txt");
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream stream = response.GetResponseStream();
+                StreamReader r = new StreamReader(stream);
+
+                string content = r.ReadToEnd();
+
+                Version latest = new Version(content);
+
+                //check to see if the version matches
+
+                if (!SDMVersion.ToString().Equals(latest.ToString()))
+                {
+                    if (pole == true)
+                    {
+                        throw new Exception();
+                    }
+
+                    DownloadNewVersion();
+                    pole = true;
+                }
+                else
+                {
+                    Launch(user);
+                }
+
             }
             catch (KeyNotFoundException)
             {
@@ -72,6 +100,11 @@ namespace ShoutzDatabaseManager_Launcher
 
         public void Launch(User user)
         {
+            if(user.GetUsername() == "none")
+            {
+                throw new Exception();
+            }
+
             string Path = Directory.GetCurrentDirectory();
 
             ProcessStartInfo startInfo = new ProcessStartInfo();
@@ -83,9 +116,42 @@ namespace ShoutzDatabaseManager_Launcher
             Process process = Process.Start(startInfo);
         }
 
+        ShoutzDatabaseManager.Shared.Waiting waiter;
         public void DownloadNewVersion()
         {
+            waiter = new ShoutzDatabaseManager.Shared.Waiting();
+            waiter.Show();
+            WebClient cExe = new WebClient();
+            cExe.DownloadFileCompleted += CExe_DownloadFileCompleted;
+            cExe.DownloadFileAsync(new Uri("https://github.com/Dytonis/ShoutzDatabaseManager/raw/master/Release/sdmf.exe"), Directory.GetCurrentDirectory() + "\\sdmf.exe");
+            WebClient cDll = new WebClient();
+            cDll.DownloadFileCompleted += CDll_DownloadFileCompleted;
+            cDll.DownloadFileAsync(new Uri("https://github.com/Dytonis/ShoutzDatabaseManager/raw/master/Release/ShoutzDatabaseManager_AdministratorData.dll"), Directory.GetCurrentDirectory() + "\\ShoutzDatabaseManager_AdministratorData.dll");
+        }
 
+        private int Progress = 0;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void CheckForCompletion()
+        {
+            if(Progress >= 2)
+            {
+                waiter.Close();
+                button1_Click(null, null);
+            }
+        }
+
+        private void CDll_DownloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            Progress++;
+        }
+
+        private void CExe_DownloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            Progress++;
         }
     }
 }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Threading;
 
-namespace ShoutzLoyaltyProgramManager
+namespace ShoutzDatabaseManager
 {
     public partial class Splash : Form
     {

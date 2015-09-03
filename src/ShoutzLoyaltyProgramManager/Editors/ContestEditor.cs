@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ShoutzLoyaltyProgramManager.Editors;
+using ShoutzDatabaseManager.Editors;
 using System.Data.SqlClient;
 using System.Collections;
-using ShoutzLoyaltyProgramManager.Shared;
+using ShoutzDatabaseManager.Shared;
 
-namespace ShoutzLoyaltyProgramManager
+namespace ShoutzDatabaseManager
 {
     public partial class ContestEditor : Form
     {

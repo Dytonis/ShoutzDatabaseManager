@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShoutzLoyaltyProgramManager.Editors
+namespace ShoutzDatabaseManager.Editors
 {
     public partial class DayConfiguration : Form
     {

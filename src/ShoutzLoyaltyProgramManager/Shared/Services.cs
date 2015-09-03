@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
 
-namespace ShoutzLoyaltyProgramManager.Shared
+namespace ShoutzDatabaseManager.Shared
 {
     class Services
     {
@@ -45,7 +45,7 @@ namespace ShoutzLoyaltyProgramManager.Shared
                     }
                     BackgroundWorker AsyncWorker = new BackgroundWorker();
                     AsyncWorker.WorkerSupportsCancellation = true;
-                    waitPage = new Waiting(AsyncWorker);
+                    waitPage = new Waiting();
                     waitPage.Show();
                     AsyncWorker.DoWork += Services.DataServices.Worker_DoWork;
                     AsyncWorker.RunWorkerCompleted += OnComplete;
@@ -87,7 +87,7 @@ namespace ShoutzLoyaltyProgramManager.Shared
                     }
                     BackgroundWorker AsyncWorker = new BackgroundWorker();
                     AsyncWorker.WorkerSupportsCancellation = true;
-                    waitPage = new Waiting(AsyncWorker);
+                    waitPage = new Waiting();
                     waitPage.Show();
                     AsyncWorker.DoWork += Services.DataServices.Worker_DoWork;
                     AsyncWorker.RunWorkerCompleted += UIWorker_RunWorkerCompleted;

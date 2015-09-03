@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace ShoutzLoyaltyProgramManager.Editors
+namespace ShoutzDatabaseManager.Editors
 {
     partial class UsersEditor
     {

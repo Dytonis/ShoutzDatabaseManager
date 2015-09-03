@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using ShoutzLoyaltyProgramManager.Shared;
+using ShoutzDatabaseManager.Shared;
 
-namespace ShoutzLoyaltyProgramManager.Editors
+namespace ShoutzDatabaseManager.Editors
 {
     public partial class UsersEditor : Form
     {

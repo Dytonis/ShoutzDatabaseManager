@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ShoutzLoyaltyProgramManager.Editors;
+using ShoutzDatabaseManager.Editors;
 
-namespace ShoutzLoyaltyProgramManager
+namespace ShoutzDatabaseManager
 {
     static class Program
     {
@@ -27,7 +27,7 @@ namespace ShoutzLoyaltyProgramManager
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            MainWindow = new ShoutzLoyaltyProgramManager.Main();
+            MainWindow = new ShoutzDatabaseManager.Main();
 
             try
             {

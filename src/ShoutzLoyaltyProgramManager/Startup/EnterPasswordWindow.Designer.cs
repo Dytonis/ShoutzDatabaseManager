@@ -1,4 +1,4 @@
-﻿namespace ShoutzLoyaltyProgramManager
+﻿namespace ShoutzDatabaseManager
 {
     partial class EnterPasswordWindow
     {

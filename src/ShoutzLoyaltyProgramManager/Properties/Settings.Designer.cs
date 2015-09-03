@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShoutzLoyaltyProgramManager.Properties
+namespace ShoutzDatabaseManager.Properties
 {
 
 

@@ -6,10 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ShoutzLoyaltyProgramManager.Shared;
+using ShoutzDatabaseManager.Shared;
 using System.Windows.Forms;
 
-namespace ShoutzLoyaltyProgramManager.Editors
+namespace ShoutzDatabaseManager.Editors
 {
     public partial class UserAdmin : Form
     {

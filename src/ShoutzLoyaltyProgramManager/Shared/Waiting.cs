@@ -8,22 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ShoutzLoyaltyProgramManager.Shared
+namespace ShoutzDatabaseManager.Shared
 {
     public partial class Waiting : Form
     {
-        BackgroundWorker _worker;
-        public Waiting(BackgroundWorker worker)
+        public Waiting()
         {
             InitializeComponent();
             progressBar1.Style = ProgressBarStyle.Marquee;
             progressBar1.MarqueeAnimationSpeed = 50;
-            _worker = worker;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            _worker.CancelAsync();
         }
     }
 }

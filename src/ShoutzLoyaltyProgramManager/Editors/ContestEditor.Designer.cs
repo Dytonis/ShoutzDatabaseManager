@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace ShoutzLoyaltyProgramManager
+namespace ShoutzDatabaseManager
 {
     partial class ContestEditor
     {

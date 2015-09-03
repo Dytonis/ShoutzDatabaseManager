@@ -1,4 +1,4 @@
-﻿namespace ShoutzLoyaltyProgramManager.Editors
+﻿namespace ShoutzDatabaseManager.Editors
 {
     partial class DayConfiguration
     {

@@ -3,3 +3,8 @@ C:\Users\Tanner Wright\Documents\Visual Studio 2015\Projects\ShoutzLoyaltyProgra
 C:\Users\Tanner Wright\Documents\Visual Studio 2015\Projects\ShoutzLoyaltyProgramManager\ShoutzDatabaseManager_AdministratorData\obj\Debug\ShoutzDatabaseManager_AdministratorData.csprojResolveAssemblyReference.cache
 C:\Users\Tanner Wright\Documents\Visual Studio 2015\Projects\ShoutzLoyaltyProgramManager\ShoutzDatabaseManager_AdministratorData\obj\Debug\ShoutzDatabaseManager_AdministratorData.dll
 C:\Users\Tanner Wright\Documents\Visual Studio 2015\Projects\ShoutzLoyaltyProgramManager\ShoutzDatabaseManager_AdministratorData\obj\Debug\ShoutzDatabaseManager_AdministratorData.pdb
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzDatabaseManager_AdministratorData\bin\Debug\ShoutzDatabaseManager_AdministratorData.dll
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzDatabaseManager_AdministratorData\bin\Debug\ShoutzDatabaseManager_AdministratorData.pdb
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzDatabaseManager_AdministratorData\obj\Debug\ShoutzDatabaseManager_AdministratorData.csprojResolveAssemblyReference.cache
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzDatabaseManager_AdministratorData\obj\Debug\ShoutzDatabaseManager_AdministratorData.dll
+C:\Users\Tanner Wright\Documents\GitHub\SDM\ShoutzDatabaseManager\src\ShoutzDatabaseManager_AdministratorData\obj\Debug\ShoutzDatabaseManager_AdministratorData.pdb

@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ShoutzLoyaltyProgramManager.Shared;
+using ShoutzDatabaseManager.Shared;
 
-namespace ShoutzLoyaltyProgramManager.Editors
+namespace ShoutzDatabaseManager.Editors
 {
     public partial class BanConfiguration : Form
     {

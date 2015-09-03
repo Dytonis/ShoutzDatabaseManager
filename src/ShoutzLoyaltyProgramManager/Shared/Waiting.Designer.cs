@@ -1,4 +1,4 @@
-﻿namespace ShoutzLoyaltyProgramManager.Shared
+﻿namespace ShoutzDatabaseManager.Shared
 {
     partial class Waiting
     {
